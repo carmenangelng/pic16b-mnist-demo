@@ -16,31 +16,36 @@ app = Dash(__name__, external_stylesheets=external_stylesheets)
 
 server = app.server
 
-app.layout = html.Div([
-    dcc.Upload(
-        id='upload-data',
-        children=html.Div([
-            'Drag and Drop or ',
-            html.A('Select Files')
-        ]),
-        style={
-            'width': '100%',
-            'height': '60px',
-            'lineHeight': '60px',
-            'borderWidth': '1px',
-            'borderStyle': 'dashed',
-            'borderRadius': '5px',
-            'textAlign': 'center',
-            'margin': '10px'
-        },
-        # Allow multiple files to be uploaded
-        multiple=False
-    ),
-    html.Div(id='output-data-upload'),
-    dcc.Graph(figure={}, id='output-fig'),
-    html.Div(id='output-prediction')
-    
-])
+app.layout = [
+        html.Div(className='row', children='Handwritten Digit Classifier',
+             style={'textAlign': 'center', 'color': 'blue', 'fontSize': 30}),
+        html.Div([
+        dcc.Upload(
+            id='upload-data',
+            children=html.Div([
+                'Drag and Drop or ',
+                html.A('Select Files')
+            ]),
+            style={
+                'width': '100%',
+                'height': '60px',
+                'lineHeight': '60px',
+                'borderWidth': '1px',
+                'borderStyle': 'dashed',
+                'borderRadius': '5px',
+                'textAlign': 'center',
+                'margin': '10px'
+            },
+            # Allow multiple files to be uploaded
+            multiple=False
+        ),
+        html.Hr(),
+        html.Div(id='output-data-upload'),
+        dcc.Graph(figure={}, id='output-fig'),
+        html.Div(id='output-prediction')
+        
+    ])
+]
 
 # Three outputs, one input, two states (taken from the uploaded data)
 @callback(Output('output-data-upload', 'children'),
