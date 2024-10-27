@@ -9,14 +9,13 @@
 
 3. Inside the code folder `pic16b-mnist-demo`, run 
  ```
-conda activate PIC16B-24W
-export FLASK_ENV=development
-flask run
+conda activate PIC16B-24F
+python app.py
 ```
-to make sure you're in the correct directory and the code and flask is working. 
-Once you've checked that the website is working locally, you can close the flask app.
+to make sure you're in the correct directory and the code and dash is working. 
+Once you've checked that the website is working locally, you can close the dash app.
 
-  **FAQ**: If you get an error message like "port 5000 is in use", make sure no other flask app is running in your laptop, and run `flask run -p 5001` (or any other number than 5000) instead.
+  **FAQ**: If you get an error message like "port 5000 is in use", make sure no other dash app is running in your laptop, and try changing the port.
 
 ### Deploying the app
 
@@ -30,7 +29,7 @@ The most important thing is that the __billing account is connected to your "edu
   - Search "Identity and Access Management (IAM) API", and enable it (not to be confused with IAM Service Account Credentials API).
 6. Create the cloud service.
   - Go to "Cloud Run" menu.
-  - Press "+ Create Service" button.
+  - Press "+ Deploy Container" button, then "Service".
   - Select "Continuously deploy new revisions from a source repository".
   - Click on "Set up with cloud build"
     - Select your GitHub repository.
@@ -51,17 +50,8 @@ The most important thing is that the __billing account is connected to your "edu
 
 
 
+## Notes
 
-## What you should look for in the website
-
-1. Go to `submit (advanced)` page and upload some of the .txt files from https://github.com/pic16b-ucla/pic16b-mnist-demo/tree/main/mnist-model/sample-data.
-
-2. Look at the `submit` function in `app.py` and try to understand the general logic.
-
-3. Look at the css files are in the static folder. If you have javascript files, that should also go in there.
-
-4. As before, the jinja template files (and html files) are in the templates folder. This time, some of the templates `extend` the `base.html`, which you can read more about [here](https://flask.palletsprojects.com/en/3.0.x/tutorial/templates/#register) and [here](https://jinja.palletsprojects.com/en/3.1.x/templates/#template-inheritance).
-
-5. When you're working on the web app homework or project, I fully expect you to copy the files from this git repo and modify it.
+1. When you're working on the web app homework or project, I fully expect you to copy the files from this git repo and modify it.
    You may need to change `requirements.txt` based on packages and their versions you use, but I recommend keeping the `Dockerfile` and `Procfile` as is (unless you have a good understanding of what you're doing!).
 
