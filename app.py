@@ -68,7 +68,7 @@ def parse_contents(contents, filename, date):
                 io.StringIO(decoded.decode('utf-8')))
             
             # Step 2: loading the picked model
-            model = pickle.load(open('model.pkl', 'rb'))
+            model = pickle.load(open('mnist-model/model.pkl', 'rb'))
             
             # Step 3: running a ML model on the image
             # Step 4: store the ML model's prediction in some Python variable
