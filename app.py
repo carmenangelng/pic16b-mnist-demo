@@ -17,7 +17,7 @@ app = Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
 
 app.layout = [
-        html.Div(className='row', children='Handwritten Digit Classifier_PIC16B',
+        html.Div(className='row', children='Handwritten Digit Classifier_PIC16B for Winter 2025',
              style={'textAlign': 'center', 'color': 'blue', 'fontSize': 30}),
         html.Div([
         dcc.Upload(
