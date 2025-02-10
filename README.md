@@ -9,7 +9,7 @@
 
 3. Inside the code folder `pic16b-mnist-demo`, run 
  ```
-conda activate PIC16B-24F
+conda activate PIC16B-25W
 python app.py
 ```
 to make sure you're in the correct directory and the code and dash is working. 
